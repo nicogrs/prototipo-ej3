@@ -50,15 +50,12 @@ export const plan = {
           Tu vuelo desde ${viaje.vueloLlegada.desde} llegó ${viaje.vueloLlegada.atraso} tarde y el ${viaje.vueloPerdido.numero} salió a las ${viaje.vueloPerdido.salio}.
           No tenés que hacer fila en el mostrador: ya está todo resuelto.
         </p>
-        <div class="mt-4 flex items-end justify-between rounded-2xl bg-noche-900 p-4">
-          <div>
-            <p class="text-xs text-noche-400">Embarcás en</p>
-            <p class="text-3xl font-bold tabular-nums text-aurora-400" data-tick="faltan" data-hasta="${v.embarque}">${duracion(faltan(v.embarque))}</p>
-          </div>
-          <div class="text-right text-xs text-noche-300">
-            <p class="font-semibold text-white">${v.numero} · ${v.origen.codigo} → ${v.destino.codigo}</p>
-            <p>Embarque ${v.embarque} · Puerta ${v.puerta}</p>
-          </div>
+        <div class="mt-4 rounded-2xl bg-noche-900 p-4">
+          <p class="text-xs text-noche-400">Embarcás en</p>
+          <p class="whitespace-nowrap text-3xl font-bold tabular-nums text-aurora-400" data-tick="faltan" data-hasta="${v.embarque}">${duracion(faltan(v.embarque))}</p>
+          <p class="mt-2 text-xs text-noche-300">
+            <span class="font-semibold text-white">${v.numero} · ${v.origen.codigo} → ${v.destino.codigo}</span> · Embarque ${v.embarque} · Puerta ${v.puerta}
+          </p>
         </div>
       </section>
 
@@ -71,6 +68,15 @@ export const plan = {
           ${icono('cama', 'size-4')} Ver reserva del hotel
         </button>
       </section>
+
+      <button data-go="copiloto" class="flex w-full items-start gap-3 rounded-3xl bg-noche-800 p-4 text-left ring-1 ring-aurora-500/30 active:bg-noche-700">
+        <span class="grid size-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-aurora-400 to-aurora-600 text-noche-950">${icono('copiloto', 'size-5')}</span>
+        <span class="min-w-0 flex-1">
+          <span class="block text-xs font-semibold text-aurora-400">Copiloto IA</span>
+          <span class="mt-0.5 block text-sm text-slate-200">Tenés tiempo de sobra: si dormís en el hotel, te despierto a las ${viaje.alarma} y llegás al embarque con margen.</span>
+          <span class="mt-2 flex items-center gap-1 text-xs font-semibold text-noche-300">Preguntale lo que necesites ${icono('derecha', 'size-3.5')}</span>
+        </span>
+      </button>
 
       <section class="grid grid-cols-2 gap-3">
         ${ATAJOS.map((a) => `

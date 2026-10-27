@@ -21,6 +21,17 @@
   --color-alerta-500: #f59e0b;
 }
 
+@layer components {
+  /* Palabras de las respuestas del Copiloto, que aparecen de a una. */
+  .palabra {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+  }
+  .palabra.on {
+    opacity: 1;
+  }
+}
+
 @layer base {
   html,
   body {
