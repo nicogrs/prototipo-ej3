@@ -24,6 +24,7 @@ const state = {
   mensaje: viaje.mensaje,
   aviso: null,
   chat: [],
+  escribiendo: false,
 };
 
 const porId = new Map(pantallas.map((p) => [p.id, p]));
@@ -41,8 +42,8 @@ function go(id, params = {}) {
   else state.historial.push({ pantalla: state.pantalla, params: state.params });
   state.pantalla = id;
   state.params = params;
-  render();
   vista.scrollTop = 0;
+  render();
 }
 
 function back() {
