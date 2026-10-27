@@ -32,12 +32,12 @@ function avatar() {
   return `<span class="grid size-8 shrink-0 place-items-center rounded-full bg-gradient-to-br from-aurora-400 to-aurora-600 text-noche-950">${icono('copiloto', 'size-4')}</span>`;
 }
 
-function burbuja(m, esUltima) {
+function burbuja(m, esUltima, state) {
   if (m.de === 'yo') {
-    return `<div class="ml-auto max-w-[80%] rounded-2xl rounded-br-md bg-aurora-500 px-4 py-2.5 text-sm font-medium text-noche-950">${escapar(m.texto)}</div>`;
+    return `<div class="ml-auto w-fit max-w-[80%] rounded-2xl rounded-br-md bg-aurora-500 px-4 py-2.5 text-sm font-medium text-noche-950">${escapar(m.texto)}</div>`;
   }
   const extras = [
-    ...(m.acciones ?? []).map((a) =>
+    ...(m.acciones ?? []).filter((a) => !(a.hacer === 'alarma' && state.alarma)).map((a) =>
       a.go
         ? `<button data-go="${a.go}" data-id="${a.id ?? ''}" class="rounded-full bg-aurora-500 px-3.5 py-2 text-xs font-bold text-noche-950 active:bg-aurora-400">${a.label}</button>`
         : `<button data-action="hacer" data-que="${a.hacer}" class="rounded-full bg-aurora-500 px-3.5 py-2 text-xs font-bold text-noche-950 active:bg-aurora-400">${a.label}</button>`,
@@ -79,7 +79,7 @@ export const copiloto = {
     if (!state.chat.length) state.chat.push({ ...saludo(viaje), de: 'ia', nuevo: true });
     const ultima = state.chat.findLastIndex((m) => m.de === 'ia');
     return `
-    <div class="flex min-h-full flex-col">
+    <div class="flex flex-1 flex-col">
       <div class="flex-1 space-y-4 p-4">
         <div class="flex items-center gap-3 rounded-2xl bg-noche-800/60 p-3 ring-1 ring-noche-700">
           ${avatar()}
@@ -88,7 +88,7 @@ export const copiloto = {
             <p class="text-xs text-noche-400">Conoce tu itinerario, tus documentos y el estado de tu vuelo</p>
           </div>
         </div>
-        ${state.chat.map((m, i) => burbuja(m, i === ultima && !state.escribiendo)).join('')}
+        ${state.chat.map((m, i) => burbuja(m, i === ultima && !state.escribiendo, state)).join('')}
         ${state.escribiendo ? escribiendo : ''}
       </div>
       <form data-action="preguntar" class="sticky bottom-0 flex gap-2 border-t border-noche-800 bg-noche-900/95 p-3 backdrop-blur">

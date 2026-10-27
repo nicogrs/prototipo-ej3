@@ -97,7 +97,7 @@ function render() {
     barra.innerHTML = renderBarra(p);
     tabs.innerHTML = renderTabs(p.tab ?? p.id);
   }
-  vista.innerHTML = `<div class="animate-entrar">${p.render(ctx())}</div>`;
+  vista.innerHTML = `<div class="animate-entrar flex min-h-full flex-col">${p.render(ctx())}</div>`;
   p.montar?.(vista, ctx());
 }
 
