@@ -3,3 +3,4 @@ public/assets/app.css
 .vercel/
 .DS_Store
 *.log
+.claude/
