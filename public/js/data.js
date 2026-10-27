@@ -41,6 +41,58 @@ export const viaje = {
     { id: 'agencia', nombre: 'Rumbo Viajes', sub: 'Tu agencia' },
   ],
 
+  documentos: [
+    {
+      id: 'hotel',
+      titulo: 'Reserva de hotel',
+      sub: 'Hotel Dorado Aeropuerto · HDA-48213',
+      icono: 'cama',
+      codigo: 'HDA-48213',
+      campos: [
+        ['Hotel', 'Hotel Dorado Aeropuerto'],
+        ['Dirección', 'Av. El Dorado 103-08, Bogotá'],
+        ['Huéspedes', 'Santiago Pereira, Valentina Suárez'],
+        ['Entrada', 'Mar 27 oct · 03:45'],
+        ['Salida', 'Mar 27 oct · 05:55'],
+        ['Habitación', 'Doble · 1 noche'],
+        ['Pago', 'Cubierto por Andes Air (conexión perdida)'],
+      ],
+    },
+    { id: 'pases', titulo: 'Tarjetas de embarque', sub: 'AN 0386 · BOG → MVD · 07:10', icono: 'pase', ir: 'pase' },
+    {
+      id: 'seguro',
+      titulo: 'Seguro de viaje',
+      sub: 'Póliza AV-552190 · vigente',
+      icono: 'escudo',
+      codigo: 'AV-552190',
+      campos: [
+        ['Titulares', 'Santiago Pereira, Valentina Suárez'],
+        ['Vigencia', '12 oct al 28 oct 2026'],
+        ['Cobertura', 'Médica, equipaje y demoras de vuelo'],
+        ['Asistencia 24 h', 'Desde la app, en la pestaña Ayuda'],
+      ],
+    },
+    {
+      id: 'pasaporte',
+      titulo: 'Pasaporte',
+      sub: 'Copia digital · Santiago Pereira',
+      icono: 'pasaporte',
+      codigo: 'C0K4829',
+      campos: [
+        ['Titular', 'Santiago Pereira'],
+        ['Nacionalidad', 'Uruguaya'],
+        ['Vence', '03 mar 2031'],
+      ],
+      nota: 'Es una copia de respaldo. En migración siempre te van a pedir el pasaporte físico.',
+    },
+  ],
+
+  ayuda: [
+    { titulo: 'Mostrador de Andes Air', detalle: 'Muelle internacional, frente a la puerta A3 · abierto 24 h', boton: 'Cómo llegar', icono: 'pin', aviso: 'Mapa del aeropuerto abierto' },
+    { titulo: 'Rumbo Viajes, tu agencia', detalle: 'Guardia por WhatsApp las 24 h', boton: 'Escribir', icono: 'mensaje', aviso: 'Abriendo el chat con tu agencia' },
+    { titulo: 'Asistencia al viajero', detalle: 'Incluida en tu seguro · llamada gratuita', boton: 'Llamar', icono: 'telefono', aviso: 'Llamando a asistencia al viajero' },
+  ],
+
   mensaje:
     'Hola! Perdimos la conexión en Bogotá porque el vuelo desde Nueva York llegó atrasado. Estamos bien: la aerolínea nos dio hotel y salimos 07:10 en el AN 0386. Llegamos a Montevideo 15:05. Les aviso cuando embarquemos.',
 
