@@ -50,15 +50,12 @@ export const plan = {
           Tu vuelo desde ${viaje.vueloLlegada.desde} llegó ${viaje.vueloLlegada.atraso} tarde y el ${viaje.vueloPerdido.numero} salió a las ${viaje.vueloPerdido.salio}.
           No tenés que hacer fila en el mostrador: ya está todo resuelto.
         </p>
-        <div class="mt-4 flex items-end justify-between rounded-2xl bg-noche-900 p-4">
-          <div>
-            <p class="text-xs text-noche-400">Embarcás en</p>
-            <p class="text-3xl font-bold tabular-nums text-aurora-400" data-tick="faltan" data-hasta="${v.embarque}">${duracion(faltan(v.embarque))}</p>
-          </div>
-          <div class="text-right text-xs text-noche-300">
-            <p class="font-semibold text-white">${v.numero} · ${v.origen.codigo} → ${v.destino.codigo}</p>
-            <p>Embarque ${v.embarque} · Puerta ${v.puerta}</p>
-          </div>
+        <div class="mt-4 rounded-2xl bg-noche-900 p-4">
+          <p class="text-xs text-noche-400">Embarcás en</p>
+          <p class="whitespace-nowrap text-3xl font-bold tabular-nums text-aurora-400" data-tick="faltan" data-hasta="${v.embarque}">${duracion(faltan(v.embarque))}</p>
+          <p class="mt-2 text-xs text-noche-300">
+            <span class="font-semibold text-white">${v.numero} · ${v.origen.codigo} → ${v.destino.codigo}</span> · Embarque ${v.embarque} · Puerta ${v.puerta}
+          </p>
         </div>
       </section>
 
