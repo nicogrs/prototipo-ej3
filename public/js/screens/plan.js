@@ -72,6 +72,15 @@ export const plan = {
         </button>
       </section>
 
+      <button data-go="copiloto" class="flex w-full items-start gap-3 rounded-3xl bg-noche-800 p-4 text-left ring-1 ring-aurora-500/30 active:bg-noche-700">
+        <span class="grid size-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-aurora-400 to-aurora-600 text-noche-950">${icono('copiloto', 'size-5')}</span>
+        <span class="min-w-0 flex-1">
+          <span class="block text-xs font-semibold text-aurora-400">Copiloto IA</span>
+          <span class="mt-0.5 block text-sm text-slate-200">Tenés tiempo de sobra: si dormís en el hotel, te despierto a las ${viaje.alarma} y llegás al embarque con margen.</span>
+          <span class="mt-2 flex items-center gap-1 text-xs font-semibold text-noche-300">Preguntale lo que necesites ${icono('derecha', 'size-3.5')}</span>
+        </span>
+      </button>
+
       <section class="grid grid-cols-2 gap-3">
         ${ATAJOS.map((a) => `
           <button data-go="${a.go}" class="rounded-2xl bg-noche-800 p-4 text-left ring-1 ring-noche-700 active:bg-noche-700">
