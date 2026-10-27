@@ -1,9 +1,6 @@
 import { icono } from '../icons.js';
 import { ahora, hhmm } from '../tiempo.js';
-
-function escapar(texto) {
-  return texto.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-}
+import { escapar } from '../texto.js';
 
 function inicial(nombre) {
   return nombre.trim()[0].toUpperCase();
