@@ -34,6 +34,16 @@ export const viaje = {
 
   alarma: '05:45',
 
+  contactos: [
+    { id: 'grupo', nombre: 'Viaje a NY', sub: 'Grupo · 6 personas' },
+    { id: 'mama', nombre: 'Mamá', sub: 'WhatsApp' },
+    { id: 'papa', nombre: 'Papá', sub: 'WhatsApp' },
+    { id: 'agencia', nombre: 'Rumbo Viajes', sub: 'Tu agencia' },
+  ],
+
+  mensaje:
+    'Hola! Perdimos la conexión en Bogotá porque el vuelo desde Nueva York llegó atrasado. Estamos bien: la aerolínea nos dio hotel y salimos 07:10 en el AN 0386. Llegamos a Montevideo 15:05. Les aviso cuando embarquemos.',
+
   linea: [
     { hora: '02:35', titulo: 'Aterrizaste en Bogotá', detalle: 'Tu vuelo desde Nueva York llegó 2 h 10 min tarde', estado: 'listo' },
     { hora: '02:58', titulo: 'Te pasamos al vuelo AN 0386', detalle: 'Sale 07:10 a Montevideo', estado: 'listo' },
