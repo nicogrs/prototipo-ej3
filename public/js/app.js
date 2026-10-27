@@ -20,6 +20,8 @@ const state = {
   alarma: false,
   avisarCambios: true,
   pasajero: 0,
+  destinatarios: ['grupo', 'mama'],
+  mensaje: viaje.mensaje,
   aviso: null,
   chat: [],
 };
