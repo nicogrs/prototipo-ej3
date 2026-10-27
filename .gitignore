@@ -1,0 +1,5 @@
+node_modules/
+public/assets/app.css
+.vercel/
+.DS_Store
+*.log
